@@ -1,0 +1,164 @@
+.\" Manpage for C_sources.                                                                                              
+.\" Contact maxime.menigoz@epitech.eu, nai-david.dong@epitech.eu, kevin.lopes@epitech.eu, alexis.abraham@epitech.eu or julien1.audurier@epitech.eu for any bug comment or help.                                                                                   
+.TH man 1 " 2014" "1.0" "nautiluSH man page"
+
+.SH NAME
+nautiluSH
+
+.SH SYNOPSIS
+.P
+\fB./nautiluSH\fR
+.P
+
+.SH DESCRIPTION
+.br
+	\fBnautiluSH\fR is a command line interpreter. nautiluSH executes commands read from the standard input or from a file.
+
+.SH AUTOCOMPLETION
+\fB<tab>\fR
+.br
+	autocomplete the binary name or the folder and file names.
+
+.br
+	You can use the "*" characater to replace it by all the possibilities.
+
+.SH BUILT-IN
+\fBalias\fR
+.br
+	This function take a string in param and add it in the alias files.
+
+\fBcd [- | PATH]\fR
+.br
+	change the current directory to the directory in param.
+.br
+	If you just execute cd without param, your working directory will be your /home/$USER.
+.br
+	If you use '-' in param, you will be back in your previous working directory ($OLDPWD).
+
+\fBecho [-n]\fR
+.br
+	display all arguments in the standard output.
+.br
+		-n : don't show the final '\\n'
+
+\fBenv\fR
+.br
+	display the environment in the standard output.
+.br
+	
+.br
+\fBexit\fR
+.br
+	It end the application.
+.br
+	Terminate the process, returning returnCode to the system as the exit status. If returnCode is not specified then it defaults to 0.
+
+\fBhistory\fR
+.br
+	The history allows you to access to your previous commands with up and down arrows.
+.br
+		\fBhistory\fR show the history.
+.br
+		\fB![exp]\fR execute the latest command which match with [exp].
+.br
+		\fB![number]\fR execute the [number]th command from the beginning of the history.
+.br
+		\fB!-[number]\fR execute the [number]th command from the end of the history.
+.br
+		\fBhistory -c\fR erase your history.
+
+\fBsetenv\fR
+.br
+	add a variable in the environment or modifies the value of an existing variable.
+.br
+	Usage : setenv [var_name] [value]	
+
+\fBunalias\fR
+.br
+	This function erase an alias.
+
+\fBunsetenv\fR
+.br
+	delete a variable in the environement.
+.br
+	Usage : unsetenv [var_name]
+
+.SH SEPARATORS
+.br
+	\fB';'\fR is a simple separator of commands.
+.br
+	\fB'&&'\fR execute the second part only if the first part have been successfully executed.
+.br
+	\fB'||'\fR execute the second part only if the first part have failed.
+
+.SH \fB$<VARIABLE>\fR
+.br
+	$<variable> will be replaced by the content of the variable.
+
+.SH \fBREDIRECTIONS\fR
+.br
+	\fB'>'\fR:
+.br
+	redirect output to file. The file is created if it does not exist, otherwise it is overwritten.
+
+.br
+	\fB'>>'\fR:
+.br
+	redirect output to file. The file is created if it does not exist, otherwise the data is appended to the existing file.
+
+.br
+	\fB'<'\fR:
+.br
+	put the contents of the file on standard input.
+
+.br
+	\fB'<<'\fR:
+.br
+	This instruction is followed by a 'word'. It's reading from standard input until the first occurrence of 'word'.
+
+
+.SH \fBPIPE\fR
+.br
+	'command1' | 'command2'. The standard output of 'command1' is sent to the standard input of 'command2'.
+.br
+
+.SH \fBKEYBOARD SHORTCUTS\fR
+.br
+	alt + backspace : delete the previous word.
+.br
+	alt + left      : move the cursor to the beginning of the previous word.
+.br
+	alt + right     : move the cursor to the end of the next word.
+.br
+	backspace       : delete the previous character.
+.br
+	ctrl + a        : back to the beginning of the line.
+.br
+	ctrl + b        : one step back.
+.br
+	ctrl + e        : go to the end of the line.
+.br
+	ctrl + f        : one step forward.
+.br
+	ctrl + h        : delete one character.
+.br
+	ctrl + l        : clear the term.
+.br
+	ctrl + left     : move the cursor to the beginning of the previous word.
+.br
+	ctrl + right    : move the cursor to the end of the next word.
+.br
+	delete          : delete the character under the cursor.
+.br
+	down arrow      : move backward in the history. 
+.br
+	left arrow      : one step back.
+.br
+	right arrow     : one step forward.
+.br
+	up arrow        : move forward in the history.
+.br
+
+
+.SH AUTHOR
+auduri_a lopes_n menigo_m dong_n abraha_c
